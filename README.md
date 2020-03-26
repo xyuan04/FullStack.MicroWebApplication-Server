@@ -8,7 +8,7 @@
 * **Frontend** - Angular / React
 * **Business Logic** - Java
 * **Data Layer** - MySQL
-* **Cloud** - Heroku
+* **Cloud** - Heroku/AWS/Google
 
 ### Installation
 
