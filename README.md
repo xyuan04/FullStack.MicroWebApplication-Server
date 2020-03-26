@@ -11,16 +11,8 @@
 * **Cloud** - Heroku
 
 ### Installation
-* Install [NodeJs](https://nodejs.org/en/). From terminal execute
-    * `brew install node`
-* Install [Angular](http://angular.io/). From terminal execute
-    * `brew install angular-cli`
-* Install [AngularCli](). From terminal execute
-    * `npm install -g @angular/cli`
-* Install [Heroku](). From terminal execute
-	* `brew tap heroku/brew && brew install heroku`
 
-<hr><hr>
+Use Spring Initializr to create an starting point for you application
 
 
 
