@@ -80,5 +80,5 @@
 * As a client, (not logged in) I
 	* can create new accounts
 	* deposit money to each account
-	* withdrawl money from each account
+	* withdraw money from each account
 	* transfer money to and from any 2 accounts
