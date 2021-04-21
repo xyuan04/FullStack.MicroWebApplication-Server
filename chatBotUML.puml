@@ -5,6 +5,7 @@ String name;
 String userName;
 String password;
 String email;
+List<Channel> channelList;
 
 getID();
 getName();
@@ -15,6 +16,8 @@ getPassword();
 setPassword(String password);
 getEmail();
 setEmail(String email);
+getChannelList();
+setChannelList(List<Channel> channelList);
 }
 
 class Message {
