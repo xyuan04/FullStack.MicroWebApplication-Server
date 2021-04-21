@@ -1,0 +1,143 @@
+@startuml
+class User {
+Long id;
+String name;
+String userName;
+String password;
+String email;
+
+getID();
+getName();
+setName(String name);
+getUserName();
+setUserName(String userName);
+getPassword();
+setPassword(String password);
+getEmail();
+setEmail(String email);
+}
+
+class Message {
+Long id;
+User user;
+String body;
+Date timeStamp;
+
+getID();
+getUser();
+setUser(User user);
+getBody();
+setBody(String body);
+getTimeStamp();
+setTimeStamp(Date timeStamp);
+}
+
+class Channel {
+Long id;
+String name;
+List<User> users;
+List<Message> messages;
+
+getID();
+getName();
+setName(String name);
+getUsers();
+setUsers(List<User> users);
+getMessages();
+setMessages(List<Messages> messages);
+}
+
+class DirectMessage {
+Long id;
+String name;
+List<User> users;
+List<Message> messages;
+
+getID();
+getName();
+setName(String name);
+getUsers();
+setUsers(List<User> users);
+getMessages();
+setMessages(List<Messages> messages);
+}
+
+class UserService {
+UserRepository userRepository;
+
+findById(Long id);
+findAllUsers();
+createUser(User user));
+updateUser(User user));
+deleteUserById(Long id);
+}
+
+class UserController {
+UserService userService;
+
+findById(Long id);
+findAllUsers();
+createUser(User user));
+updateUser(Long id, User user));
+deleteUserById(Long id);
+}
+
+class MessageService {
+MessageRepository messageRepository;
+
+findMessageById(Long id);
+createMessage(Message message);
+updateMessage(Long id, Message message);
+deleteMessageById(Long id);
+}
+
+class MessageController {
+MessageService messageService;
+
+findMessageById(Long id);
+createMessage(Message message);
+updateMessage(Long id, Message message);
+deleteMessageById(Long id);
+}
+
+class ChannelService {
+ChannelRepository channelRepository;
+
+findChannelById(Long id);
+createChannel(Channel channel);
+updateChannel(Long id, Channel channel);
+deleteChannel(Long id);
+}
+
+class DirectMessageService {
+DirectMessageRepository directMessageRepository;
+
+findDirectMessageById(Long id);
+createDirectMessage(DirectMessage directMessage);
+updateDirectMessage(Long id, DirectMessage directMessage);
+deleteDirectMessage(Long id);
+}
+
+class ChannelController {
+ChannelService channelService;
+
+findChannelById(Long id);
+createChannel(Channel channel);
+updateChannel(Long id, Channel channel);
+deleteChannel(Long id);
+}
+
+class DirectMessageController {
+DirectMessageService directMessageService;
+
+findDirectMessageById(Long id);
+createDirectMessage(DirectMessage directMessage);
+updateDirectMessage(Long id, DirectMessage directMessage);
+deleteDirectMessage(Long id);
+}
+
+interface UserRepository {}
+interface MessageRepository {}
+interface ChannelRepository {}
+interface DirectMessageRepository {}
+@enduml
