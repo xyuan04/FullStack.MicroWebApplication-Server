@@ -48,4 +48,9 @@ public class DirectMessageService {
         }
         return false;
     }
+
+    public Boolean deleteAllDirectMessages() {
+        findAllDirectMessages().forEach(dm -> deleteDirectMessage(dm.getId()));
+        return true;
+    }
 }
