@@ -1,4 +1,4 @@
-package kelly.ryan.xiong.chatbot.model;
+package kelly.ryan.xiong.chatbot.models;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -14,7 +14,7 @@ public class User {
     private String userName;
     private String password;
     private String email;
-    private List<Channel> channelList;
+//    private List<Channel> channelList;
 
 
 
