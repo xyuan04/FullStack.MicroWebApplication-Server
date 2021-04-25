@@ -30,25 +30,28 @@ public class MessageService {
         return messageRepository.findAll();
     }
 
-    public List<Message> findAllUserSentMessages(Long userId) {
-        // find all messages that have userId as the id of the senderId field of message
-        return null;
+    public Message updateMessageById(Long msgId, Message newMessageData) {
+        Message ogMessage = messageRepository.findById(msgId).get();
+
+        ogMessage.setMsgId(newMessageData.getMsgId());
+        ogMessage.setMessageBody(newMessageData.getMessageBody());
+        ogMessage.setTimeStamp(newMessageData.getTimeStamp());
+        ogMessage.setSenderId(newMessageData.getSenderId());
+        ogMessage.setChannelId(newMessageData.getChannelId());
+        ogMessage.setDirectMessageId(newMessageData.getDirectMessageId());
+
+        return messageRepository.save(ogMessage);
     }
 
-    public List<Message> findAllUserReceivedMessages(Long userId) {
-        // find all messages that have userId as the id of the recipient field of message
-        return null;
+    public Boolean deleteMessageById(Long msgId) {
+        if (messageRepository.existsById(msgId)) {
+            messageRepository.deleteById(msgId);
+        }
+        return false;
     }
 
-    public List<Message> findAllUserSentAndReceivedMessages(Long userId) {
-        // find all messages that have userId as the id of either the recipient or sender field of message
-        return null;
+    public void deleteAllMessages() {
+        messageRepository.deleteAll();
     }
-
-//    public Message updateMessageById(Long msgId, Message newMessageData) {
-//        Message ogMessage = messageRepository.findById(msgId).get();
-//
-//        ogMessage.s
-//    }
 
 }
