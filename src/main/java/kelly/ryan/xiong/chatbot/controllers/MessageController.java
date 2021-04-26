@@ -12,10 +12,12 @@ import java.util.List;
 @RequestMapping("/messages")
 public class MessageController {
     private MessageService messageService;
+
     @Autowired
     public MessageController(MessageService messageService) {
         this.messageService = messageService;
     }
+
     @GetMapping("/{msgId}")
     public ResponseEntity<Message> getMessageById(@PathVariable Long msgId) {
         return new ResponseEntity<>(messageService.findMessage(msgId), HttpStatus.OK);

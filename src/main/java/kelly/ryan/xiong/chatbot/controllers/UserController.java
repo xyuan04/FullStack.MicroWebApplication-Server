@@ -37,10 +37,10 @@ public class UserController {
         return new ResponseEntity<User>(userService.createUser(user),HttpStatus.CREATED);
     }
 
-/*    @PutMapping("/updateUser/{id}")
+    @PutMapping("/updateUser/{id}")
     public ResponseEntity<User> updateUser(@RequestBody User user, @PathVariable Long id) {
-        return ResponseEntity.created(userService.updateUser(user, id));
-    }*/
+        return ResponseEntity.ok(userService.updateUser(user, id));
+    }
 
     @DeleteMapping("/remove/{id}")
     public ResponseEntity<String> removeUser(@PathVariable Long id) {

@@ -40,14 +40,12 @@ public class UserService {
         user.setUserName(u.getUserName());
         user.setPassword(u.getPassword());
         user.setEmail(u.getEmail());
-        //user.setChannelList(u.getChannelList());
 
         return user;
-
     }
 
     public Boolean removeUser(Long id) {
-        //userRepository.delete(id);
+        userRepository.delete(userRepository.getOne(id));
         return true;
     }
 }
