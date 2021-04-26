@@ -53,6 +53,7 @@ public class Message {
         this.recipientId = recipientId;
     }
 
+
     public Long getChannelId() {
         return channelId;
     }
@@ -94,4 +95,5 @@ public class Message {
                 ", directMessageId=" + directMessageId +
                 '}';
     }
+
 }

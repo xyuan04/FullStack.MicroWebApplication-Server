@@ -49,6 +49,4 @@ public class MessageService {
         Message ogMessage = messageRepository.findById(msgId).get();
 
         ogMessage.s
-    }
-
 }
