@@ -3,6 +3,8 @@ package kelly.ryan.xiong.chatbot.models;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
+import java.util.List;
 
 @Entity
 public class User {
@@ -14,7 +16,8 @@ public class User {
     private String userName;
     private String password;
     private String email;
-    //private List<Channel> channelList;
+    @OneToMany
+    private List<Channel> channelList;
 
     public User() {
     }
@@ -55,13 +58,13 @@ public class User {
         this.email = email;
     }
 
-/*    public List<Channel> getChannelList() {
+    public List<Channel> getChannelList() {
         return channelList;
     }
 
     public void setChannelList(List<Channel> channelList) {
         this.channelList = channelList;
-    }*/
+    }
 
 
 }
