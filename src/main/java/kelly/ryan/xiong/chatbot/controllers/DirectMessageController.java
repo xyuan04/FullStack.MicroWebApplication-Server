@@ -41,9 +41,4 @@ public class DirectMessageController {
     public ResponseEntity<Boolean> deleteDirectMessage(@PathVariable Long id) {
         return new ResponseEntity<>(directMessageService.deleteDirectMessage(id), HttpStatus.NO_CONTENT);
     }
-
-    @DeleteMapping
-    public ResponseEntity<Boolean> deleteAllDirectMessages() {
-        return new ResponseEntity<>(directMessageService.deleteAllDirectMessages(), HttpStatus.NO_CONTENT);
-    }
 }
