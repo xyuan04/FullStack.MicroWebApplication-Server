@@ -1,5 +1,7 @@
 package kelly.ryan.xiong.chatbot.models;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import javax.persistence.*;
 import java.util.List;
 import java.util.Objects;
@@ -13,8 +15,12 @@ public class DirectMessage {
     @Column(name = "NAME")
     private String name;
     @ManyToMany
+    @JsonIgnore
+    @JoinColumn(name = "ID")
     private List<User> users;
     @OneToMany
+    @JsonIgnore
+    @JoinColumn(name = "ID")
     private List<Message> messages;
 
     public Long getId() {

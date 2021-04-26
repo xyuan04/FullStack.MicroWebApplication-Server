@@ -43,4 +43,9 @@ public class ChannelController {
     public ResponseEntity<Boolean> deleteChannel(@PathVariable Long id) {
         return new ResponseEntity<>(channelService.deleteChannel(id), HttpStatus.NO_CONTENT);
     }
+
+    @DeleteMapping
+    public ResponseEntity<Boolean> deleteAllChannels() {
+        return new ResponseEntity<>(channelService.deleteAllChannels(), HttpStatus.NO_CONTENT);
+    }
 }
