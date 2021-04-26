@@ -49,4 +49,9 @@ public class ChannelService {
         return false;
     }
 
+    public Boolean deleteAllChannels() {
+        findAllChannels().forEach(channel -> deleteChannel(channel.getId()));
+        return true;
+    }
+
 }
