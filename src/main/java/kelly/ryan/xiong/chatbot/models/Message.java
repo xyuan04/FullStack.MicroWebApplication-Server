@@ -1,20 +1,31 @@
 package kelly.ryan.xiong.chatbot.models;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
+import javax.persistence.*;
 import java.sql.Date;
 import java.util.Objects;
 
 @Entity
+@Table(name = "messages")
 public class Message {
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "MESSAGE_ID")
     private Long msgId;
+
+    @Column(name = "MESSAGE_BODY")
     private String messageBody;
+
+    @Column(name = "DATETIME_CREATED")
     private Date timeStamp;
+
+    @Column(name = "USER_SENDER_ID")
     private Long senderId;
+
+    @Column(name = "CHANNEL_ID")
     private Long channelId;
+
+    @Column(name = "DM_ID")
+
     private Long directMessageId;
 
     public Long getMsgId() {
