@@ -45,10 +45,8 @@ public class MessageService {
         return null;
     }
 
-//    public Message updateMessageById(Long msgId, Message newMessageData) {
-//        Message ogMessage = messageRepository.findById(msgId).get();
-//
-//        ogMessage.s
-//    }
+    public Message updateMessageById(Long msgId, Message newMessageData) {
+        Message ogMessage = messageRepository.findById(msgId).get();
 
+        ogMessage.s
 }

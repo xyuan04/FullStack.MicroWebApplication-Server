@@ -1,7 +1,5 @@
 package kelly.ryan.xiong.chatbot.models;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
-
 import javax.persistence.*;
 import java.util.List;
 import java.util.Objects;
@@ -10,17 +8,13 @@ import java.util.Objects;
 public class Channel {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "CHANNEL_ID")
+    @Column(name = "ID")
     private Long id;
     @Column(name = "NAME")
     private String name;
     @ManyToMany
-    @JoinColumn(name = "CHANNEL_ID")
-    @JsonIgnore
     private List<User> users;
     @OneToMany
-    @JoinColumn(name = "MESSAGE_ID")
-    @JsonIgnore
     private List<Message> messages;
 
     public Long getId() {
