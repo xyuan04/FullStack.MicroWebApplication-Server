@@ -45,13 +45,13 @@ public class Message {
         this.senderId = senderId;
     }
 
-    public Date getTimeStamp() {
-        return timeStamp;
-    }
-
-    public void setTimeStamp(Date timeStamp) {
-        this.timeStamp = timeStamp;
-    }
+//    public Long getRecipientId() {
+//        return recipientId;
+//    }
+//
+//    public void setRecipientId(Long recipientId) {
+//        this.recipientId = recipientId;
+//    }
 
     public Long getChannelId() {
         return channelId;
@@ -69,28 +69,29 @@ public class Message {
         this.directMessageId = directMessageId;
     }
 
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (!(o instanceof Message)) return false;
-        Message message = (Message) o;
-        return Objects.equals(msgId, message.msgId) && Objects.equals(messageBody, message.messageBody) && Objects.equals(timeStamp, message.timeStamp) && Objects.equals(senderId, message.senderId) && Objects.equals(channelId, message.channelId) && Objects.equals(directMessageId, message.directMessageId);
-    }
+//    @Override
+//    public boolean equals(Object o) {
+//        if (this == o) return true;
+//        if (!(o instanceof Message)) return false;
+//        Message message = (Message) o;
+//        return Objects.equals(msgId, message.msgId) && Objects.equals(messageBody, message.messageBody) && Objects.equals(timeSent, message.timeSent) && Objects.equals(senderId, message.senderId) && Objects.equals(recipientId, message.recipientId) && Objects.equals(channelId, message.channelId) && Objects.equals(directMessageId, message.directMessageId);
+//    }
 
-    @Override
-    public int hashCode() {
-        return Objects.hash(msgId, messageBody, timeStamp, senderId, channelId, directMessageId);
-    }
+//    @Override
+//    public int hashCode() {
+//        return Objects.hash(msgId, messageBody, timeSent, senderId, recipientId, channelId, directMessageId);
+//    }
 
-    @Override
-    public String toString() {
-        return "Message{" +
-                "msgId=" + msgId +
-                ", messageBody='" + messageBody + '\'' +
-                ", timeStamp=" + timeStamp +
-                ", senderId=" + senderId +
-                ", channelId=" + channelId +
-                ", directMessageId=" + directMessageId +
-                '}';
-    }
+//    @Override
+//    public String toString() {
+//        return "Message{" +
+//                "msgId=" + msgId +
+//                ", messageBody='" + messageBody + '\'' +
+//                ", timeSent=" + timeSent +
+//                ", senderId=" + senderId +
+//                ", recipientId=" + recipientId +
+//                ", channelId=" + channelId +
+//                ", directMessageId=" + directMessageId +
+//                '}';
+//    }
 }
