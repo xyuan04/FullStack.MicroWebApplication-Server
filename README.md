@@ -1,3 +1,9 @@
+# Contributors
+*Xiong Yuan, (@xyuan04)
+*Ryan Hufford, (@r-m-hufford)
+*Kelly Porter, (@KellyPorter02)
+
+
 # Micro Web Application - Server
 * **Objective** - to create an implementation of a small web service
 * **Purpose** - to demonstrate the construction of a full-stacked web-application
