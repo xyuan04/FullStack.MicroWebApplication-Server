@@ -1,7 +1,7 @@
 # Contributors
-*Xiong Yuan, (@xyuan04)
-*Ryan Hufford, (@r-m-hufford)
-*Kelly Porter, (@KellyPorter02)
+* Xiong Yuan, (@xyuan04)
+* Ryan Hufford, (@r-m-hufford)
+* Kelly Porter, (@KellyPorter02)
 
 
 # Micro Web Application - Server
