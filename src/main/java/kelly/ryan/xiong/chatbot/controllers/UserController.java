@@ -1,6 +1,8 @@
 package kelly.ryan.xiong.chatbot.controllers;
 
 
+import kelly.ryan.xiong.chatbot.models.Channel;
+import kelly.ryan.xiong.chatbot.models.DirectMessage;
 import kelly.ryan.xiong.chatbot.models.User;
 import kelly.ryan.xiong.chatbot.services.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -46,6 +48,16 @@ public class UserController {
     public ResponseEntity<String> removeUser(@PathVariable Long id) {
         userService.removeUser(id);
         return ResponseEntity.ok("User number " + id + " has been removed.");
+    }
+
+    @GetMapping("/getchannels/{id}")
+    public ResponseEntity<List<Channel>> findAllChannels(@PathVariable Long id){
+        return ResponseEntity.ok(userService.findAllChannels(id));
+    }
+
+    @GetMapping("/getmessages/{id}")
+    public ResponseEntity<List<DirectMessage>> findAllDirectMessages(@PathVariable Long id){
+        return ResponseEntity.ok(userService.findAllDirectMessages(id));
     }
 
 

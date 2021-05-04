@@ -76,5 +76,9 @@ public class User {
         this.channelList = channelList;
     }
 
+    public List<DirectMessage> getDirectMessages(){return directMessages;}
 
+    public void setDirectMessages(List<DirectMessage> directMessages) {
+        this.directMessages = directMessages;
+    }
 }
