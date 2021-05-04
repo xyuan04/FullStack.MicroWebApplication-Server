@@ -1,5 +1,7 @@
 package kelly.ryan.xiong.chatbot.services;
 
+import kelly.ryan.xiong.chatbot.models.Channel;
+import kelly.ryan.xiong.chatbot.models.DirectMessage;
 import kelly.ryan.xiong.chatbot.models.User;
 import kelly.ryan.xiong.chatbot.repositories.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -47,5 +49,15 @@ public class UserService {
     public Boolean removeUser(Long id) {
         userRepository.delete(userRepository.getOne(id));
         return true;
+    }
+
+    public List<Channel> findAllChannels(Long id){
+        User user = findOne(id);
+        return user.getChannelList();
+    }
+
+    public List<DirectMessage> findAllDirectMessages(Long id){
+        User user = findOne(id);
+        return user.getDirectMessages();
     }
 }
