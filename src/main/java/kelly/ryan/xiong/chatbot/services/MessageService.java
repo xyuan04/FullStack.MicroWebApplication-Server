@@ -33,8 +33,8 @@ public class MessageService {
         ogMessage.setMessageBody(newMessageData.getMessageBody());
         ogMessage.setTimeStamp(newMessageData.getTimeStamp());
         ogMessage.setSenderId(newMessageData.getSenderId());
-        ogMessage.setChannelId(newMessageData.getChannelId());
-        ogMessage.setDirectMessageId(newMessageData.getDirectMessageId());
+        ogMessage.setChannel(newMessageData.getChannel());
+        ogMessage.setDirectMessage(newMessageData.getDirectMessage());
         return messageRepository.save(ogMessage);
     }
 
