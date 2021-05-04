@@ -28,6 +28,7 @@ public class Message {
     private Channel channel;
 
     @ManyToOne
+    @JsonIgnoreProperties("messages")
     private DirectMessage directMessage;
 
     public Long getMsgId() {
