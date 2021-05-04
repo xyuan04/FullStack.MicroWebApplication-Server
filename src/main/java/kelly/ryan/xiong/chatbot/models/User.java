@@ -1,5 +1,8 @@
 package kelly.ryan.xiong.chatbot.models;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
 import javax.persistence.*;
 import java.util.List;
 
@@ -19,8 +22,12 @@ public class User {
     private String password;
     @Column(name = "EMAIL")
     private String email;
-    @OneToMany
+    @ManyToMany(mappedBy = "users", fetch = FetchType.LAZY)
+    @JsonIgnoreProperties("users")
     private List<Channel> channelList;
+    @ManyToMany(mappedBy = "users", fetch = FetchType.LAZY)
+    @JsonIgnoreProperties("users")
+    private List<DirectMessage> directMessages;
 
     public User() {
     }

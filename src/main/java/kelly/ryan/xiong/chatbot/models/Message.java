@@ -1,5 +1,8 @@
 package kelly.ryan.xiong.chatbot.models;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
 import javax.persistence.*;
 import java.sql.Date;
 import java.util.Objects;
@@ -21,11 +24,11 @@ public class Message {
     @Column(name = "USER_SENDER_ID")
     private Long senderId;
 
-    @Column(name = "CHANNEL_ID")
-    private Long channelId;
+    @ManyToOne
+    private Channel channel;
 
-    @Column(name = "DM_ID")
-    private Long directMessageId;
+    @ManyToOne
+    private DirectMessage directMessage;
 
     public Long getMsgId() {
         return msgId;
@@ -59,20 +62,20 @@ public class Message {
         this.timeStamp = timeStamp;
     }
 
-    public Long getChannelId() {
-        return channelId;
+    public Channel getChannel() {
+        return channel;
     }
 
-    public void setChannelId(Long channelId) {
-        this.channelId = channelId;
+    public void setChannel(Channel channel) {
+        this.channel = channel;
     }
 
-    public Long getDirectMessageId() {
-        return directMessageId;
+    public DirectMessage getDirectMessage() {
+        return directMessage;
     }
 
-    public void setDirectMessageId(Long directMessageId) {
-        this.directMessageId = directMessageId;
+    public void setDirectMessage(DirectMessage directMessage) {
+        this.directMessage = directMessage;
     }
 
     @Override
@@ -80,12 +83,12 @@ public class Message {
         if (this == o) return true;
         if (!(o instanceof Message)) return false;
         Message message = (Message) o;
-        return Objects.equals(msgId, message.msgId) && Objects.equals(messageBody, message.messageBody) && Objects.equals(timeStamp, message.timeStamp) && Objects.equals(senderId, message.senderId) && Objects.equals(channelId, message.channelId) && Objects.equals(directMessageId, message.directMessageId);
+        return Objects.equals(msgId, message.msgId) && Objects.equals(messageBody, message.messageBody) && Objects.equals(timeStamp, message.timeStamp) && Objects.equals(senderId, message.senderId) && Objects.equals(channel, message.channel) && Objects.equals(directMessage, message.directMessage);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(msgId, messageBody, timeStamp, senderId, channelId, directMessageId);
+        return Objects.hash(msgId, messageBody, timeStamp, senderId, channel, directMessage);
     }
 
     @Override
@@ -95,8 +98,8 @@ public class Message {
                 ", messageBody='" + messageBody + '\'' +
                 ", timeStamp=" + timeStamp +
                 ", senderId=" + senderId +
-                ", channelId=" + channelId +
-                ", directMessageId=" + directMessageId +
+                ", channel=" + channel +
+                ", directMessageId=" + directMessage +
                 '}';
     }
 }
