@@ -25,7 +25,6 @@ public class Message {
     private Long channelId;
 
     @Column(name = "DM_ID")
-
     private Long directMessageId;
 
     public Long getMsgId() {

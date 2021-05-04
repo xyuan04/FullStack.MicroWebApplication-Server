@@ -10,7 +10,7 @@ import java.util.Objects;
 public class DirectMessage {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "ID")
+    @Column(name = "DM_ID")
     private Long id;
     @Column(name = "NAME")
     private String name;

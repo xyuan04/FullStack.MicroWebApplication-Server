@@ -4,14 +4,20 @@ import javax.persistence.*;
 import java.util.List;
 
 @Entity
+@Table(name = "USER_PROFILE")
 public class User {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "USER_ID")
     private Long id;
+    @Column(name = "NAME")
     private String name;
+    @Column(name = "USER_NAME")
     private String userName;
+    @Column(name = "PASSWORD")
     private String password;
+    @Column(name = "EMAIL")
     private String email;
     @OneToMany
     private List<Channel> channelList;

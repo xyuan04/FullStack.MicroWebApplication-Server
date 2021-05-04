@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="DataSourceManagerImpl" format="xml" multifile-model="true">
-    <data-source source="LOCAL" name="ripl@localhost" uuid="2fac23b3-fc3b-4a8f-b340-2a5bc1d1d1dd">
-      <driver-ref>mysql.8</driver-ref>
+    <data-source source="LOCAL" name="dfprapcnqvl8a5@ec2-54-166-167-192.compute-1.amazonaws.com" uuid="5a33c6ac-39e9-4c88-8929-273d011eb95d">
+      <driver-ref>postgresql</driver-ref>
       <synchronize>true</synchronize>
-      <jdbc-driver>com.mysql.cj.jdbc.Driver</jdbc-driver>
-      <jdbc-url>jdbc:mysql://localhost:3306/ripl?serverTimezone=UTC</jdbc-url>
+      <jdbc-driver>org.postgresql.Driver</jdbc-driver>
+      <jdbc-url>jdbc:postgresql://ec2-54-166-167-192.compute-1.amazonaws.com:5432/dfprapcnqvl8a5</jdbc-url>
       <working-dir>$ProjectFileDir$</working-dir>
     </data-source>
   </component>
