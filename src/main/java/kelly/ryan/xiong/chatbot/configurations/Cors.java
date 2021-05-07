@@ -1,4 +1,4 @@
-package kelly.ryan.xiong.chatbot;
+package kelly.ryan.xiong.chatbot.configurations;
 
 import org.springframework.context.annotation.*;
 import org.springframework.web.servlet.config.annotation.*;
