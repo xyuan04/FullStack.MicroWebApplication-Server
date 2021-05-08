@@ -25,6 +25,7 @@ public class Message {
     private Long senderId;
 
     @ManyToOne
+    @JsonIgnoreProperties("messages")
     private Channel channel;
 
     @ManyToOne

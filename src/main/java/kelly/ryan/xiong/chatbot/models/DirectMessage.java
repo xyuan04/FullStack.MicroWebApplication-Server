@@ -18,7 +18,7 @@ public class DirectMessage {
     @ManyToMany(fetch = FetchType.LAZY)
     @JsonIgnore
     private List<User> users;
-    @OneToMany(mappedBy = "directMessage", fetch = FetchType.LAZY)
+    @OneToMany(mappedBy = "directMessage", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
     @JsonIgnoreProperties("channel")
     private List<Message> messages;
 

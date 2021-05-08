@@ -18,7 +18,7 @@ public class Channel {
     @ManyToMany(fetch = FetchType.LAZY)
     @JsonIgnoreProperties("users")
     private List<User> users;
-    @OneToMany(mappedBy = "channel", fetch = FetchType.LAZY)
+    @OneToMany(mappedBy = "channel", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
     @JsonIgnoreProperties("channel")
     private List<Message> messages;
 
