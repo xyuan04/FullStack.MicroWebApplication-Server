@@ -51,6 +51,6 @@ public class ChannelController {
 
     @GetMapping("/User/{id}/Channels")
     public ResponseEntity<List<Channel>> getChannelsByUserId(@PathVariable Long id) {
-        return new ResponseEntity<>(channelService.findChannelsByUserId(id), HttpStatus.OK);
+        return new ResponseEntity<>(channelService.findChannelsByConsumerId(id), HttpStatus.OK);
     }
 }

@@ -7,11 +7,11 @@ import javax.persistence.*;
 import java.util.List;
 
 @Entity
-@Table(name = "USER_PROFILE")
-public class User {
+@Table(name = "CONSUMER")
+public class Consumer {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "USER_ID")
+    @Column(name = "CONSUMER_ID")
     private Long id;
     @Column(name = "NAME")
     private String name;
@@ -21,14 +21,14 @@ public class User {
     private String password;
     @Column(name = "EMAIL")
     private String email;
-    @ManyToMany(mappedBy = "users", fetch = FetchType.LAZY)
-    @JsonIgnoreProperties("users")
+    @ManyToMany(mappedBy = "consumers", fetch = FetchType.LAZY)
+    @JsonIgnoreProperties("consumers")
     private List<Channel> channelList;
-    @ManyToMany(mappedBy = "users", fetch = FetchType.LAZY)
-    @JsonIgnoreProperties("users")
+    @ManyToMany(mappedBy = "consumers", fetch = FetchType.LAZY)
+    @JsonIgnoreProperties("consumers")
     private List<DirectMessage> directMessages;
 
-    public User() {
+    public Consumer() {
     }
 
     public Long getId() {

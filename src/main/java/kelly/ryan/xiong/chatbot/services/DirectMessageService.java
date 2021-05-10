@@ -33,7 +33,7 @@ public class DirectMessageService {
         DirectMessage ogDirectMessage = directMessageRepository.findById(id).get();
 
         ogDirectMessage.setName(directMessage.getName());
-        ogDirectMessage.setUsers(directMessage.getUsers());
+        ogDirectMessage.setConsumers(directMessage.getConsumers());
         ogDirectMessage.setMessages(directMessage.getMessages());
 
         return directMessageRepository.save(ogDirectMessage);

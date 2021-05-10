@@ -1,6 +1,5 @@
 package kelly.ryan.xiong.chatbot.models;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 import javax.persistence.*;
@@ -16,8 +15,8 @@ public class Channel {
     @Column(name = "NAME")
     private String name;
     @ManyToMany(fetch = FetchType.LAZY)
-    @JsonIgnoreProperties("users")
-    private List<User> users;
+    @JsonIgnoreProperties("consumers")
+    private List<Consumer> consumers;
     @OneToMany(mappedBy = "channel", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
     @JsonIgnoreProperties("channel")
     private List<Message> messages;
@@ -38,12 +37,12 @@ public class Channel {
         this.name = name;
     }
 
-    public List<User> getUsers() {
-        return users;
+    public List<Consumer> getConsumers() {
+        return consumers;
     }
 
-    public void setUsers(List<User> users) {
-        this.users = users;
+    public void setConsumers(List<Consumer> consumers) {
+        this.consumers = consumers;
     }
 
     public List<Message> getMessages() {
@@ -59,12 +58,12 @@ public class Channel {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Channel channel = (Channel) o;
-        return Objects.equals(id, channel.id) && Objects.equals(name, channel.name) && Objects.equals(users, channel.users) && Objects.equals(messages, channel.messages);
+        return Objects.equals(id, channel.id) && Objects.equals(name, channel.name) && Objects.equals(consumers, channel.consumers) && Objects.equals(messages, channel.messages);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, name, users, messages);
+        return Objects.hash(id, name, consumers, messages);
     }
 
     @Override
@@ -72,7 +71,7 @@ public class Channel {
         return "Channel{" +
                 "id=" + id +
                 ", name='" + name + '\'' +
-                ", users=" + users +
+                ", consumers=" + consumers +
                 ", messages=" + messages +
                 '}';
     }
