@@ -18,9 +18,8 @@ public class Message {
 
     @Column(name = "MESSAGE_BODY")
     private String messageBody;
-    @JsonIgnore
     @Column(name = "DATETIME_CREATED")
-    private Date timeStamp;
+    private String timeStamp;
     @Column(name = "SENDER")
     private String senderUserName;
 
@@ -57,11 +56,11 @@ public class Message {
         this.senderUserName = senderUserName;
     }
 
-    public Date getTimeStamp() {
+    public String getTimeStamp() {
         return timeStamp;
     }
 
-    public void setTimeStamp(Date timeStamp) {
+    public void setTimeStamp(String timeStamp) {
         this.timeStamp = timeStamp;
     }
 
