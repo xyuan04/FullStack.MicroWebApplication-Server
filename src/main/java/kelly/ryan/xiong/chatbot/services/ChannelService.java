@@ -54,6 +54,7 @@ public class ChannelService {
         return true;
     }
 
+
     public List<Channel> findChannelsByConsumerId(Long id) {
         Consumer consumer = consumerRepository.findById(id).get();
         return consumer.getChannelList();
