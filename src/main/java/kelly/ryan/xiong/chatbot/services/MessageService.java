@@ -32,7 +32,7 @@ public class MessageService {
         ogMessage.setMsgId(newMessageData.getMsgId());
         ogMessage.setMessageBody(newMessageData.getMessageBody());
         ogMessage.setTimeStamp(newMessageData.getTimeStamp());
-        ogMessage.setSenderId(newMessageData.getSenderId());
+        ogMessage.setSenderUserName(newMessageData.getSenderUserName());
         ogMessage.setChannel(newMessageData.getChannel());
         ogMessage.setDirectMessage(newMessageData.getDirectMessage());
         return messageRepository.save(ogMessage);
