@@ -1,7 +1,9 @@
 package kelly.ryan.xiong.chatbot.services;
 
 import kelly.ryan.xiong.chatbot.models.Channel;
+import kelly.ryan.xiong.chatbot.models.User;
 import kelly.ryan.xiong.chatbot.repositories.ChannelRepository;
+import kelly.ryan.xiong.chatbot.repositories.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -11,10 +13,12 @@ import java.util.List;
 @Service
 public class ChannelService {
     private ChannelRepository channelRepository;
+    private UserRepository userRepository;
 
     @Autowired
-    public ChannelService(ChannelRepository channelRepository) {
+    public ChannelService(ChannelRepository channelRepository, UserRepository userRepository) {
         this.channelRepository = channelRepository;
+        this.userRepository = userRepository;
     }
 
     public Channel createChannel(Channel channel) {
@@ -30,13 +34,9 @@ public class ChannelService {
     }
 
     public Channel updateChannel(Long id, Channel channel) {
-        Channel ogChannel = channelRepository.findById(id).get();
+        channel.setId(id);
 
-        ogChannel.setName(channel.getName());
-        ogChannel.setUsers(channel.getUsers());
-        ogChannel.setMessages(channel.getMessages());
-
-        return channelRepository.save(ogChannel);
+        return channelRepository.save(channel);
     }
 
     public Boolean deleteChannel(Long id) {
@@ -52,6 +52,11 @@ public class ChannelService {
     public Boolean deleteAllChannels() {
         findAllChannels().forEach(channel -> deleteChannel(channel.getId()));
         return true;
+    }
+
+    public List<Channel> findChannelsByUserId(Long id) {
+        User user = userRepository.findById(id).get();
+        return user.getChannelList();
     }
 
 }
