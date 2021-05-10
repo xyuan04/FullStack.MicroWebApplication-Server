@@ -1,9 +1,9 @@
 package kelly.ryan.xiong.chatbot.services;
 
 import kelly.ryan.xiong.chatbot.models.Channel;
-import kelly.ryan.xiong.chatbot.models.User;
+import kelly.ryan.xiong.chatbot.models.Consumer;
 import kelly.ryan.xiong.chatbot.repositories.ChannelRepository;
-import kelly.ryan.xiong.chatbot.repositories.UserRepository;
+import kelly.ryan.xiong.chatbot.repositories.ConsumerRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -13,12 +13,12 @@ import java.util.List;
 @Service
 public class ChannelService {
     private ChannelRepository channelRepository;
-    private UserRepository userRepository;
+    private ConsumerRepository consumerRepository;
 
     @Autowired
-    public ChannelService(ChannelRepository channelRepository, UserRepository userRepository) {
+    public ChannelService(ChannelRepository channelRepository, ConsumerRepository consumerRepository) {
         this.channelRepository = channelRepository;
-        this.userRepository = userRepository;
+        this.consumerRepository = consumerRepository;
     }
 
     public Channel createChannel(Channel channel) {
@@ -54,9 +54,10 @@ public class ChannelService {
         return true;
     }
 
-    public List<Channel> findChannelsByUserId(Long id) {
-        User user = userRepository.findById(id).get();
-        return user.getChannelList();
+
+    public List<Channel> findChannelsByConsumerId(Long id) {
+        Consumer consumer = consumerRepository.findById(id).get();
+        return consumer.getChannelList();
     }
 
 }

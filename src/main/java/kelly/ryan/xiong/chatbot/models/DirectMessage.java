@@ -17,7 +17,7 @@ public class DirectMessage {
     private String name;
     @ManyToMany(fetch = FetchType.LAZY)
     @JsonIgnore
-    private List<User> users;
+    private List<Consumer> consumers;
     @OneToMany(mappedBy = "directMessage", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
     @JsonIgnoreProperties("channel")
     private List<Message> messages;
@@ -34,12 +34,12 @@ public class DirectMessage {
         this.name = name;
     }
 
-    public List<User> getUsers() {
-        return users;
+    public List<Consumer> getConsumers() {
+        return consumers;
     }
 
-    public void setUsers(List<User> users) {
-        this.users = users;
+    public void setConsumers(List<Consumer> consumers) {
+        this.consumers = consumers;
     }
 
     public List<Message> getMessages() {
@@ -55,12 +55,12 @@ public class DirectMessage {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         DirectMessage that = (DirectMessage) o;
-        return Objects.equals(id, that.id) && Objects.equals(name, that.name) && Objects.equals(users, that.users) && Objects.equals(messages, that.messages);
+        return Objects.equals(id, that.id) && Objects.equals(name, that.name) && Objects.equals(consumers, that.consumers) && Objects.equals(messages, that.messages);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, name, users, messages);
+        return Objects.hash(id, name, consumers, messages);
     }
 
     @Override
@@ -68,7 +68,7 @@ public class DirectMessage {
         return "DirectMessage{" +
                 "id=" + id +
                 ", name='" + name + '\'' +
-                ", users=" + users +
+                ", consumers=" + consumers +
                 ", messages=" + messages +
                 '}';
     }
