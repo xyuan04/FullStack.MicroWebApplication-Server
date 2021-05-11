@@ -16,10 +16,10 @@ public class DirectMessage {
     @Column(name = "NAME")
     private String name;
     @ManyToMany(fetch = FetchType.LAZY)
-    @JsonIgnore
+    @JsonIgnoreProperties("consumers")
     private List<Consumer> consumers;
     @OneToMany(mappedBy = "directMessage", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
-    @JsonIgnoreProperties("channel")
+    @JsonIgnoreProperties("directMessage")
     private List<Message> messages;
 
     public Long getId() {

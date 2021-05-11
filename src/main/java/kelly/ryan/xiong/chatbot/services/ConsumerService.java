@@ -35,12 +35,13 @@ public class ConsumerService {
 
 
     public Consumer updateConsumer(Consumer u, Long id) {
-        Consumer consumer = new Consumer();
+        Consumer consumer = findOne(id);
 
         consumer.setName(u.getName());
         consumer.setUserName(u.getUserName());
         consumer.setPassword(u.getPassword());
         consumer.setEmail(u.getEmail());
+        consumer.setProfilePicture(u.getProfilePicture());
 
         return consumer;
     }
