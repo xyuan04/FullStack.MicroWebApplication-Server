@@ -1,9 +1,0 @@
-{
-  "messageBody": "Message test. I don’t know what to say here.",
-  "channel": {
-    "id": 10,
-    "name": null,
-    "users": null,
-    "messages": null
-  }
-}
