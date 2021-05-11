@@ -35,6 +35,7 @@ public class MessageService {
         ogMessage.setSenderUserName(newMessageData.getSenderUserName());
         ogMessage.setChannel(newMessageData.getChannel());
         ogMessage.setDirectMessage(newMessageData.getDirectMessage());
+        ogMessage.setSenderPic(newMessageData.getSenderPic());
         return messageRepository.save(ogMessage);
     }
 

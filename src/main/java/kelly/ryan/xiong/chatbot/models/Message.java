@@ -22,6 +22,8 @@ public class Message {
     private String timeStamp;
     @Column(name = "SENDER")
     private String senderUserName;
+    @Column(name = "SENDER_PIC")
+    private String senderPic;
 
     @ManyToOne
     @JoinColumn(name="CHANNEL_ID")
@@ -54,6 +56,14 @@ public class Message {
 
     public void setSenderUserName(String senderUserName) {
         this.senderUserName = senderUserName;
+    }
+
+    public String getSenderPic() {
+        return senderPic;
+    }
+
+    public void setSenderPic(String senderPic) {
+        this.senderPic = senderPic;
     }
 
     public String getTimeStamp() {
@@ -90,7 +100,7 @@ public class Message {
 
     @Override
     public int hashCode() {
-        return Objects.hash(msgId, messageBody, timeStamp, senderUserName, channel, directMessage);
+        return Objects.hash(msgId, messageBody, timeStamp, senderUserName, senderPic, channel, directMessage);
     }
 
     @Override
@@ -98,8 +108,9 @@ public class Message {
         return "Message{" +
                 "msgId=" + msgId +
                 ", messageBody='" + messageBody + '\'' +
-                ", timeStamp=" + timeStamp +
+                ", timeStamp='" + timeStamp + '\'' +
                 ", senderUserName='" + senderUserName + '\'' +
+                ", senderPic='" + senderPic + '\'' +
                 ", channel=" + channel +
                 ", directMessage=" + directMessage +
                 '}';
