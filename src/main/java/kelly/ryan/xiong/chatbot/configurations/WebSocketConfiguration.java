@@ -8,23 +8,15 @@ import org.springframework.web.socket.config.annotation.EnableWebSocket;
 import org.springframework.web.socket.config.annotation.WebSocketConfigurer;
 import org.springframework.web.socket.config.annotation.WebSocketHandlerRegistry;
 
-import java.util.Arrays;
-import java.util.List;
-
 @Configuration
 @EnableWebSocket
 public class WebSocketConfiguration implements WebSocketConfigurer {
-
-
+    private final static String CHAT_ENDPOINT = "/chat";
+    
     @Override
     public void registerWebSocketHandlers(WebSocketHandlerRegistry webSocketHandlerRegistry) {
-        List<String> endPoints = Arrays.asList("/Channel/*");
-        endPoints.forEach(endPoint -> {
-            webSocketHandlerRegistry
-                    .addHandler(getChatWebSocketHandler(), endPoint)
-                    .setAllowedOrigins("*");
-        });
-
+        webSocketHandlerRegistry.addHandler(getChatWebSocketHandler(), CHAT_ENDPOINT)
+                .setAllowedOrigins("*");
     }
 
     @Bean
