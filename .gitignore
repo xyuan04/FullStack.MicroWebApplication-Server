@@ -10,3 +10,5 @@
 */target/**
 /FullStack.MicroWebApplication-Server/target/
 **/target/**
+/.idea/*
+.idea/*
