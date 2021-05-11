@@ -1,0 +1,106 @@
+[
+  {
+    "id": 1,
+    "name": "ANIME",
+    "consumers": [
+      {
+        "id": 1,
+        "name": "KELLY PORTER",
+        "userName": "KELPO",
+        "password": "123",
+        "email": "KP@ZIPCODE.COM",
+        "channelList": [
+          {
+            "id": 1,
+            "name": "ANIME",
+            "messages": []
+          },
+          {
+            "id": 3,
+            "name": "GAMES",
+            "messages": []
+          }
+        ],
+        "directMessages": []
+      },
+      {
+        "id": 2,
+        "name": "RYAN HUFFORD",
+        "userName": "RYAN",
+        "password": "123",
+        "email": "RH@ZIPCODE.COM",
+        "channelList": [
+          {
+            "id": 1,
+            "name": "ANIME",
+            "messages": []
+          }
+        ],
+        "directMessages": []
+      },
+      {
+        "id": 3,
+        "name": "XIONG YUAN",
+        "userName": "XIONG",
+        "password": "123",
+        "email": "XY@ZIPCODE.COM",
+        "channelList": [
+          {
+            "id": 1,
+            "name": "ANIME",
+            "messages": []
+          }
+        ],
+        "directMessages": []
+      }
+    ],
+    "messages": []
+  },
+  {
+    "id": 3,
+    "name": "GAMES",
+    "consumers": [
+      {
+        "id": 6,
+        "name": "DESA BURTON",
+        "userName": "DESA",
+        "password": "123",
+        "email": "DB@ZIPCODE.COM",
+        "channelList": [
+          {
+            "id": 3,
+            "name": "GAMES",
+            "messages": []
+          },
+          {
+            "id": 6,
+            "name": "SPORTS",
+            "messages": []
+          }
+        ],
+        "directMessages": []
+      },
+      {
+        "id": 1,
+        "name": "KELLY PORTER",
+        "userName": "KELPO",
+        "password": "123",
+        "email": "KP@ZIPCODE.COM",
+        "channelList": [
+          {
+            "id": 1,
+            "name": "ANIME",
+            "messages": []
+          },
+          {
+            "id": 3,
+            "name": "GAMES",
+            "messages": []
+          }
+        ],
+        "directMessages": []
+      }
+    ],
+    "messages": []
+  }
+]

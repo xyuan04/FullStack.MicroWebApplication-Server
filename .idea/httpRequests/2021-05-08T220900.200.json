@@ -1,0 +1,28 @@
+{
+  "id": 1,
+  "name": "KELLY PORTER",
+  "userName": "KELPO",
+  "password": "123",
+  "email": "KP@ZIPCODE.COM",
+  "channelList": [
+    {
+      "id": 1,
+      "name": "ANIME",
+      "messages": [
+        {
+          "msgId": 1,
+          "messageBody": "HELLO",
+          "timeStamp": "2021-05-04",
+          "senderId": 1,
+          "directMessage": null
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "name": "GAMES",
+      "messages": []
+    }
+  ],
+  "directMessages": []
+}
