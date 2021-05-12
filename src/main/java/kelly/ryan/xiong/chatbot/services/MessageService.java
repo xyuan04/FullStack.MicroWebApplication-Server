@@ -1,5 +1,6 @@
 package kelly.ryan.xiong.chatbot.services;
 
+import kelly.ryan.xiong.chatbot.models.Channel;
 import kelly.ryan.xiong.chatbot.models.Message;
 import kelly.ryan.xiong.chatbot.repositories.MessageRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -48,5 +49,9 @@ public class MessageService {
 
     public void deleteAllMessages() {
         messageRepository.deleteAll();
+    }
+
+    public Iterable<Message> findByChannel(Long id) {
+        return messageRepository.getMessageByChannel_Id(id);
     }
 }
