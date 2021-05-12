@@ -59,5 +59,10 @@ public class ConsumerController {
         return ResponseEntity.ok(consumerService.findAllDirectMessages(id));
     }
 
+    @GetMapping("/findName/{name}/{password}")
+    public ResponseEntity<Consumer> findByName(@PathVariable String name, @PathVariable String password){
+        return ResponseEntity.ok(consumerService.findByName(name, password));
+    }
+
 
 }

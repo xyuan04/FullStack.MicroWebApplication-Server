@@ -60,4 +60,8 @@ public class ConsumerService {
         Consumer consumer = findOne(id);
         return consumer.getDirectMessages();
     }
+
+    public Consumer findByName(String name, String password) {
+        return consumerRepository.findByUserNameAndPassword(name, password);
+    }
 }
