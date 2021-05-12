@@ -43,4 +43,5 @@ public class MessageController {
         messageService.deleteAllMessages();
         return ResponseEntity.ok("All messages have been deleted.");
     }
+
 }
