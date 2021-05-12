@@ -43,4 +43,9 @@ public class MessageController {
         messageService.deleteAllMessages();
         return ResponseEntity.ok("All messages have been deleted.");
     }
+
+    @GetMapping("/channel/{id}")
+    public ResponseEntity<Iterable<Message>> findByChannel(@PathVariable Long id) {
+        return new ResponseEntity<>(messageService.findByChannel(id), HttpStatus.OK);
+    }
 }
