@@ -12,7 +12,8 @@ import javax.sql.DataSource;
 @Profile({"localPostgres"})
 public class DataSourceLocalPostgres {
 
-    /* set VM options in config: -Dspring.profiles.active=local
+
+    /* set VM options in config: -Dspring.profiles.active=localPostgres
      * set environment variables in config for username/pwd/url
      */
 
@@ -31,4 +32,8 @@ public class DataSourceLocalPostgres {
 
         return new HikariDataSource(hikariConfig);
     }
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> kelly2
