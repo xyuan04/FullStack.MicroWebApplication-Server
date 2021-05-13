@@ -1,3 +1,18 @@
+GET http://localhost:8080/messages/channel/1
+Accept: application/json
+
+<> 2021-05-12T171656.200.json
+
+###
+
+GET http://localhost:8080/messages/channel/1
+Accept: application/json
+
+<> 2021-05-12T170105.200.json
+
+###
+
+>>>>>>> kelly
 GET http://localhost:8080/Channel/User/1/Channels
 Accept: application/json
 

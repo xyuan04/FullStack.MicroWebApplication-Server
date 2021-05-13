@@ -11,6 +11,7 @@ import java.util.List;
 @RestController
 @RequestMapping("/messages")
 public class MessageController {
+
     private MessageService messageService;
 
     @Autowired
@@ -43,4 +44,5 @@ public class MessageController {
         messageService.deleteAllMessages();
         return ResponseEntity.ok("All messages have been deleted.");
     }
+
 }

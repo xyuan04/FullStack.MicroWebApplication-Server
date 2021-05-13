@@ -16,9 +16,16 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.mock.mockito.MockBean;
 import org.springframework.http.ResponseEntity;
 import org.springframework.test.web.servlet.MockMvc;
+import static org.mockito.ArgumentMatchers.anyLong;
+import org.junit.runner.RunWith;
+import org.mockito.InjectMocks;
+import org.mockito.Mock;
+import org.mockito.Mockito;
+import org.mockito.MockitoAnnotations;
+import org.mockito.junit.MockitoJUnitRunner;
+import org.springframework.http.ResponseEntity;
 
 import static org.mockito.ArgumentMatchers.anyLong;
-
 
 @SpringBootTest
 @AutoConfigureMockMvc
@@ -30,6 +37,11 @@ class MessageControllerTest {
     @Autowired
     MockMvc mvc;
 
+    @Before
+    public void setup() {
+        MockitoAnnotations.initMocks(this);
+    }
+
     @Test
     public void getMessageByIdTest() throws Exception {
         Message testMessage = new Message();
@@ -39,3 +51,10 @@ class MessageControllerTest {
         Assert.assertTrue(returnedMsg.getBody().getMessageBody().equals("Hi Bob."));
     }
 }
+
+//        ResponseEntity<Message> returnedMsg = messageController.getMessageById(1L);
+//
+//        Assert.assertTrue(returnedMsg.getBody().getMessageBody().equals("Hi Bob."));
+//    }
+//
+//}
