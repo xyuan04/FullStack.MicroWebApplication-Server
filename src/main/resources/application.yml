@@ -36,19 +36,19 @@ server:
   port: 5432
 ---
 
-spring:
-  datasource:
-    driver-class-name: org.postgresql.Driver
-  jpa:
-    hibernate:
-      ddl-auto: update
-    properties:
-      hibernate:
-        dialect: org.hibernate.dialect.PostgreSQLDialect
-    show-sql: false
-  config:
-    activate:
-      on-profile: cloud
-server:
-  port: 8080
----
+#spring:
+#  datasource:
+#    driver-class-name: org.postgresql.Driver
+#  jpa:
+#    hibernate:
+#      ddl-auto: update
+#    properties:
+#      hibernate:
+#        dialect: org.hibernate.dialect.PostgreSQLDialect
+#    show-sql: false
+#  config:
+#    activate:
+#      on-profile: heroku-prod
+#server:
+#  port: 8080
+#---
