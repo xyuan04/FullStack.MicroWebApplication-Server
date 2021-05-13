@@ -31,13 +31,6 @@ public class MessageServiceTest {
     }
 
 
-    @InjectMocks MessageRepository messageRepository;
-
-//    @Before
-//    public void setup() {
-//        MockitoAnnotations.initMocks(this);
-//    }
-
     @Test
     public void createMessageTest() {
         Message testMessage = new Message();
@@ -45,11 +38,9 @@ public class MessageServiceTest {
         Mockito.when(messageRepository.save(any())).thenReturn(testMessage);
         Message returnedMsg = messageService.createMessage(new Message());
         Assert.assertTrue(returnedMsg.getMessageBody().equals("Hi Bob."));
+
     }
 }
 
-        Message returnedMsg = messageService.createMessage(new Message());
 
-        Assert.assertTrue(returnedMsg.getMessageBody().equals("Hi Bob."));
-    }
-}
+
