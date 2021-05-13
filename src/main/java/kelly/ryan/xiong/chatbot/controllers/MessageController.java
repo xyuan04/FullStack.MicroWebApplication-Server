@@ -11,6 +11,7 @@ import java.util.List;
 @RestController
 @RequestMapping("/messages")
 public class MessageController {
+
     private MessageService messageService;
 
     @Autowired
@@ -44,8 +45,4 @@ public class MessageController {
         return ResponseEntity.ok("All messages have been deleted.");
     }
 
-    @GetMapping("/channel/{id}")
-    public ResponseEntity<Iterable<Message>> findByChannel(@PathVariable Long id) {
-        return new ResponseEntity<>(messageService.findByChannel(id), HttpStatus.OK);
-    }
 }

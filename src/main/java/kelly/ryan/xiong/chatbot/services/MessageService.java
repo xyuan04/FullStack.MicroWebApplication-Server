@@ -9,6 +9,7 @@ import java.util.List;
 
 @Service
 public class MessageService {
+
     private MessageRepository messageRepository;
 
     @Autowired
