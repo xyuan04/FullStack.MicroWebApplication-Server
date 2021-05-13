@@ -1,0 +1,18 @@
+---
+
+spring:
+  h2:
+    console:
+      enabled: true
+      path: /console
+  jpa:
+    hibernate:
+      ddl-auto: create
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.H2Dialect
+  config:
+    activate:
+      on-profile: inmemory
+server:
+  port: 8081
