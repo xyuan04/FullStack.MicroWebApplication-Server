@@ -1,5 +1,6 @@
 package kelly.ryan.xiong.chatbot.services;
 
+import kelly.ryan.xiong.chatbot.models.Channel;
 import kelly.ryan.xiong.chatbot.models.Message;
 import kelly.ryan.xiong.chatbot.repositories.MessageRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -33,9 +34,10 @@ public class MessageService {
         ogMessage.setMsgId(newMessageData.getMsgId());
         ogMessage.setMessageBody(newMessageData.getMessageBody());
         ogMessage.setTimeStamp(newMessageData.getTimeStamp());
-        ogMessage.setSenderId(newMessageData.getSenderId());
+        ogMessage.setSenderUserName(newMessageData.getSenderUserName());
         ogMessage.setChannel(newMessageData.getChannel());
         ogMessage.setDirectMessage(newMessageData.getDirectMessage());
+        ogMessage.setSenderPic(newMessageData.getSenderPic());
         return messageRepository.save(ogMessage);
     }
 
@@ -48,5 +50,9 @@ public class MessageService {
 
     public void deleteAllMessages() {
         messageRepository.deleteAll();
+    }
+
+    public Iterable<Message> findByChannel(Long id) {
+        return messageRepository.getMessageByChannel_Id(id);
     }
 }

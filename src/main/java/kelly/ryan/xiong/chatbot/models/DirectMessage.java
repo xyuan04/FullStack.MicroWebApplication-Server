@@ -1,6 +1,5 @@
 package kelly.ryan.xiong.chatbot.models;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 import javax.persistence.*;
@@ -16,10 +15,10 @@ public class DirectMessage {
     @Column(name = "NAME")
     private String name;
     @ManyToMany(fetch = FetchType.LAZY)
-    @JsonIgnore
-    private List<User> users;
-    @OneToMany(mappedBy = "directMessage", fetch = FetchType.LAZY)
-    @JsonIgnoreProperties("channel")
+    @JsonIgnoreProperties("consumers")
+    private List<Consumer> consumers;
+    @OneToMany(mappedBy = "directMessage", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+    @JsonIgnoreProperties("directMessage")
     private List<Message> messages;
 
     public Long getId() {
@@ -34,12 +33,12 @@ public class DirectMessage {
         this.name = name;
     }
 
-    public List<User> getUsers() {
-        return users;
+    public List<Consumer> getConsumers() {
+        return consumers;
     }
 
-    public void setUsers(List<User> users) {
-        this.users = users;
+    public void setConsumers(List<Consumer> consumers) {
+        this.consumers = consumers;
     }
 
     public List<Message> getMessages() {
@@ -55,12 +54,12 @@ public class DirectMessage {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         DirectMessage that = (DirectMessage) o;
-        return Objects.equals(id, that.id) && Objects.equals(name, that.name) && Objects.equals(users, that.users) && Objects.equals(messages, that.messages);
+        return Objects.equals(id, that.id) && Objects.equals(name, that.name) && Objects.equals(consumers, that.consumers) && Objects.equals(messages, that.messages);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, name, users, messages);
+        return Objects.hash(id, name, consumers, messages);
     }
 
     @Override
@@ -68,7 +67,7 @@ public class DirectMessage {
         return "DirectMessage{" +
                 "id=" + id +
                 ", name='" + name + '\'' +
-                ", users=" + users +
+                ", consumers=" + consumers +
                 ", messages=" + messages +
                 '}';
     }

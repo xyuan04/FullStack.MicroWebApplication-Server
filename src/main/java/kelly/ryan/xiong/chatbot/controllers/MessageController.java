@@ -11,6 +11,7 @@ import java.util.List;
 @RestController
 @RequestMapping("/messages")
 public class MessageController {
+
     private MessageService messageService;
 
     @Autowired
