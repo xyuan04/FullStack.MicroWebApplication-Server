@@ -42,8 +42,10 @@ public class ConsumerService {
         consumer.setPassword(u.getPassword());
         consumer.setEmail(u.getEmail());
         consumer.setProfilePicture(u.getProfilePicture());
+        consumer.setChannelList(u.getChannelList());
+        consumer.setDirectMessages(u.getDirectMessages());
 
-        return consumer;
+        return consumerRepository.save(consumer);
     }
 
     public Boolean removeConsumer(Long id) {
