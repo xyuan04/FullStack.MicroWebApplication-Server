@@ -12,10 +12,6 @@ Accept: application/json
 
 ###
 
-<<<<<<< HEAD
-=======
->>>>>>> kelly
->>>>>>> kelly2
 GET http://localhost:8080/Channel/User/1/Channels
 Accept: application/json
 
