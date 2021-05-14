@@ -1,0 +1,54 @@
+---
+
+spring:
+  h2:
+    console:
+      enabled: true
+      path: /console
+  jpa:
+    hibernate:
+      ddl-auto: create
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.H2Dialect
+    show-sql: true
+  config:
+    activate:
+      on-profile: inmemory
+server:
+  port: 8081
+---
+
+spring:
+  datasource:
+    driver-class-name: org.postgresql.Driver
+  jpa:
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+    show-sql: false
+  config:
+    activate:
+      on-profile: localPostgres
+server:
+  port: 5432
+---
+
+#spring:
+#  datasource:
+#    driver-class-name: org.postgresql.Driver
+#  jpa:
+#    hibernate:
+#      ddl-auto: update
+#    properties:
+#      hibernate:
+#        dialect: org.hibernate.dialect.PostgreSQLDialect
+#    show-sql: false
+#  config:
+#    activate:
+#      on-profile: heroku-prod
+#server:
+#  port: 8080
+#---
