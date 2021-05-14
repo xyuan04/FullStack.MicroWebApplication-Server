@@ -9,9 +9,7 @@ import java.util.List;
 
 @Repository
 public interface MessageRepository extends JpaRepository<Message, Long> {
-    
-    List<Message> findAllMessagesByConsumerNameAndChannelName(String consumerName, String channelName);
-    
+
     Iterable<Message> getMessageByChannel_Id(Long id);
 
 }
